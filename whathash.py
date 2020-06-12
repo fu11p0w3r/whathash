@@ -88,9 +88,9 @@ HASHLIST = {
 def banner():
     banner = '''   
               __          __   __                __    
-    .--.--.--|  |--.---.-|  |_|  |--.---.-.-----|  |--.   [Author]:fu11p0w3r
+    .--.--.--|  |--.---.-|  |_|  |--.---.-.-----|  |--.   [Author]: fu11p0w3r
     |  |  |  |     |  _  |   _|     |  _  |__ --|     |   [Version]: 0.1
-    |________|__|__|___._|____|__|__|___._|_____|__|__|   [Info]: tool for detect hash algorithms
+    |________|__|__|___._|____|__|__|___._|_____|__|__|   [Info]: tool for determining the type of hash algorithm
                                                         '''
     system('cls') if name == 'nt' else system('clear')
     print(banner)
@@ -121,11 +121,12 @@ if __name__ == '__main__':
         print('[X]Error, pls try again with correct value!')
         exit(0)
     else:
+        banner()
+        print(f'Entered hash: {hash}')
         result = get_algorithm(hash)
         print('===============================================')
         if result != 'Not Detected':
             result.sort()
-            print(f'Entered hash is {hash}')
             print("\nPossible algorithms:")
             for _ in result:
                 print(f'[+]{_}')
